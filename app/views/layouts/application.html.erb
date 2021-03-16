@@ -13,7 +13,7 @@
 <body>
 <% if user_signed_in? %>
       <li>
-        <%= link_to "Home", destroy_user_session_path, method: :delete %>
+        <%= link_to "Home", user_path(current_user.id) %>
       </li>
       <li>
         <%= link_to "Users", destroy_user_session_path, method: :delete %>
