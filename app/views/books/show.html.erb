@@ -1,8 +1,8 @@
 <%= @books.each do |book| %>
 <div>
   <%= @book.user.name %>
-  <%= book.title %>
-  <%= book.body %>
+  <%= @book.title %>
+  <%= @book.body %>
   <% if @book.user == current_user %>
     <%= link_to "Destroy", book_path(@book), method: :delete %>
   <% end %>

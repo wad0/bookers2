@@ -1,9 +1,8 @@
 <%= @books.each do |book| %>
 <div>
   <%= link_to book_path(book.id) do %>
-  Title<%= book.title %>
+  Title<%= @book.title %>
   <% end %>
-  Opinion<%= book.body %>
+  Opinion<%= @book.body %>
 </div>
 <% end %>
-<%= yield %>
