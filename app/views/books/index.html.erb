@@ -1,8 +1,9 @@
-<%= @books.each do |book| %>
+<% @books.each do |book| %>
 <div>
+  <!--ログインユーザのアイコン表示-->
   <%= link_to book_path(book.id) do %>
-  Title<%= @book.title %>
+  <%= book.title %>
   <% end %>
-  Opinion<%= @book.body %>
+  <%= book.body %>
 </div>
 <% end %>
