@@ -1,5 +1,5 @@
-<% @books.each do |book| %>
 <div>
+  <<%= attachment_image_tag book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
   <%= @book.user.name %>
   <%= @book.title %>
   <%= @book.body %>
@@ -7,5 +7,4 @@
     <%= link_to "Destroy", book_path(@book), method: :delete %>
     <!--edit追加する-->
   <% end %>
-<% end %>
 </div>
