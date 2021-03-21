@@ -1,8 +1,12 @@
+<main>
+  <div class="container">
+    <div class="row">
 <%= render 'users/side', users: @users , books: @books, book: @book ,user: @user %>
 
-
+<div class="col-md-8 offset-md-1">
+  <h2>Books</h2>
 <% @books.each do |book| %>
-<div>
+<table class="table table-striped">
 <p><%= attachment_image_tag book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %></p>
   <%= link_to book_path(book.id) do %>
   <%= book.title %>
@@ -10,3 +14,8 @@
   <%= book.body %>
 </div>
 <% end %>
+</table>
+</div>
+</div>
+</div>
+</main>
