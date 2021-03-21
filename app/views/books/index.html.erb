@@ -1,3 +1,6 @@
+<%= render 'users/side', users: @users , books: @books, book: @book ,user: @user %>
+
+
 <% @books.each do |book| %>
 <div>
 <p><%= attachment_image_tag book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %></p>
