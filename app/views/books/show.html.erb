@@ -1,12 +1,32 @@
 <%= render 'users/side', users: @users , books: @books, book: @book ,user: @user %>
 
-<div>
-  <%= attachment_image_tag @book.user, :profile_image, :fill, 40, 40, fallback: "no_image.jpg" %>
-  <%= @book.user.name %>
-  <%= @book.title %>
-  <%= @book.body %>
-  <% if @book.user == current_user %>
-    <%= link_to "Edit",edit_book_path(@book.id) %>
-    <%= link_to "Destroy", book_path(@book), method: :delete %>
-  <% end %>
+<div class="col-md-8 offset-md-1">
+
+  <h2>Book detail</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>
+        <%= attachment_image_tag @book.user, :profile_image, size: "40x40", fallback: "no_image.jpg" %><br>
+          <%= @book.user.name %>
+      </td>
+      <td>
+      <%= link_to book_path(@book) do %>
+      <%= @book.title %>
+      <% end %>
+      </td>
+      <td>
+      <%= @book.body %>
+      </td>
+    <% if @book.user == current_user %>
+      <td>
+      <%= link_to "Edit",edit_book_path(@book),class:"btn btn-success" %>
+      </td>
+      <td>
+      <%= link_to "Destroy", book_path(@book), method: :delete,class:"btn btn-danger" %>
+      <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
 </div>
