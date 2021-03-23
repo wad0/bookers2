@@ -9,7 +9,6 @@
   </ul>
 <% end %>
 
-<form>
 <%= form_with model:@book,local:true do |f| %>
 <div class="form-group">
 <p>Title</p>
@@ -23,6 +22,5 @@
 <p><%= f.submit 'Update Book',class:"btn btn-success" %></p>
 <% end %>
 </div>
-</form>
 <%= link_to "Show", book_path(@book.id) %> | <%= link_to "Back", books_path %>
 </div>

@@ -9,7 +9,6 @@
   </ul>
 <% end %>
 
-<form>
 <%= form_with model:@user, local:true do |f| %>
 <div class="form-group">
 <p>Name</p>
@@ -27,5 +26,4 @@
 <p><%= f.submit "Update User",class:"btn btn-secondary" %></p>
 <% end %>
 </div>
-</form>
 </div>
