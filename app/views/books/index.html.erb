@@ -36,14 +36,14 @@
       </td>
       <td>
         <%= book.body %>
-        <% end %>
       </td>
       <td>
         いいね
       </td>
       <td>
-        <%= link_to "#{book.book_comments.count}コメント",book_path(book.id) %>
+        コメント数：<%= book.book_comments.count %>
       </td>
+        <% end %>
     </tr>
   </tbody>
 </table>
