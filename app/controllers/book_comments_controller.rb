@@ -9,6 +9,7 @@ class BookCommentsController < ApplicationController
       redirect_to book_path(book)
     else
       @book_show=Book.find(params[:id])
+      @user=@book_show.user
       @book_comment=BookComment.new
       render 'books/show'
     end
