@@ -6,6 +6,14 @@ class User < ApplicationRecord
   has_many :books,dependent: :destroy
   has_many :book_comments,dependent: :destroy
   has_many :favorites,dependent: :destroy
+  has_many :follower,class_name: "Relationship",foreign_key: "follower_id",dependent: :destroy
+  has_many :followed,class_name: "Relationship",foreign_key: "followed_id",dependent: :destroy
+  # foreign_key（FK）には、@user.xxxとした際に「@user.idがfollower_idなのかfollowed_idなのか」を指定
+  
+  has_many :following_user, through: :follower, source: :followed 
+  has_many :follower_user, through: :followed, source: :follower 
+  # @user.booksのように、@user.○○で、そのユーザがフォローしている人orフォローされている人の一覧を出したい
+  
   attachment :profile_image
 
   validates :name, uniqueness: true, length: { minimum: 2, maximum: 20 }
