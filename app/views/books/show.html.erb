@@ -50,12 +50,8 @@
   <%= render 'book_comments/index', book_show: @book_show %>
   </div>
 
-<div class="new-comment">
-<%= form_with model:[@book_show, @book_comment], local: true do |f| %>
-  <%= f.text_area :comment %>
-  <%= f.submit "送信" %>
-<% end %>
-</div>
+  <%= render 'book_comments/form', book_show: @book_show,book_comment: @book_comment %>
+
 <!--コメント機能-->
 </div>
 </div>
